@@ -1,0 +1,124 @@
+---
+title: "MIDN 2022 report figures and tables"
+author: "Camilla Seirup"
+date: "12/22/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(knitr.kable.NA = '')
+```
+
+```{r deps, include = FALSE}
+library(tidyverse)
+library(forestMIDN)
+library(forestTrends)
+library(htmltools)
+library(knitr)
+library(kableExtra)
+```
+
+```{r import, include = FALSE, cache = FALSE}
+importCSV(path = 'C:/01_NETN/Forest_Health/R_Dev/MIDN_report', zip_name = 'MIDN_Forest_20211215.zip')
+```
+
+```{r compile_data, include = FALSE}
+source("02_MIDN_2022_report_compile.R")
+```
+
+## {.tabset .tabset-pills}
+
+### Regeneration Metrics {.tabset}
+Only included live, native, canopy trees
+
+#### Sapling Density
+<h3>By cycle<h3>
+```{r sap loess by cycle, echo=FALSE}
+sapC
+```
+
+<h3>By year<h3>
+```{r sap loess by year, echo=FALSE}
+sapY
+```
+
+
+#### Seedling Density
+<h3>By cycle<h3>
+```{r seed loess by cycle, echo=FALSE}
+seedC
+```
+
+<h3>By year<h3>
+```{r seed loess by year, echo=FALSE}
+seedY
+```
+
+#### By Size Class
+```{r regen dist by size class, echo=FALSE}
+regen_plot
+```
+
+Last 4 years of data:
+"FRSP", "RICH", "PETE", "GEWA", "THST" -> last four years 2018 - 2021
+
+"VAFO", "HOFU", "GETT", "APCO", "BOWA", "COLO", "SAHI", "ASIS") -> last four years 2016-2019
+
+#### Sapling Diameter Distibution
+```{r sap diameter dist, echo=FALSE}
+sap_dist_plot
+```
+
+
+"FRSP", "RICH", "PETE", "GEWA", "THST" -> last four years 2018 - 2021
+
+"VAFO", "HOFU", "GETT", "APCO", "BOWA", "COLO", "SAHI", "ASIS") -> last four years 2016-2019
+
+### Deer Browse Index {.tabset}
+```{r dbi, echo=FALSE}
+DBI_plot
+```
+
+"FRSP", "RICH", "PETE", "GEWA", "THST" -> last four years 2018 - 2021
+
+"VAFO", "HOFU", "GETT", "APCO", "BOWA", "COLO", "SAHI", "ASIS") -> last four years 2016-2019
+
+Problem: DBI not collected until 2009 so MIDN plots cycle 1 only include 50% of plots and NCBN cycle 1 includes 75% of plots
+ASIS, COLO, and SAHI cycle 1 are complete
+
+### Stocking Index {.tabset}
+#### Trend
+<h3>By cycle (density in stems/m.sq)<h3>
+```{r stock loess by cycle, echo=FALSE}
+stockC
+```
+
+<h3>By year (density in stems/m.sq)<h3>
+```{r stock loess by year, echo=FALSE}
+stockY
+```
+
+#### Status
+```{r stock status, echo=FALSE}
+stkStatus
+```
+
+Mean stocking index for the last four years of sampling at each park
+
+"FRSP", "RICH", "PETE", "GEWA", "THST" -> last four years 2018 - 2021
+
+"VAFO", "HOFU", "GETT", "APCO", "BOWA", "COLO", "SAHI", "ASIS") -> last four years 2016-2019
+
+#### Percent of Stocked Plots
+```{r Percent of plots stocked, echo=FALSE}
+pStk_plot
+```
+
+% of plots that were stocked after the last four years of sampling at each park
+
+"FRSP", "RICH", "PETE", "GEWA", "THST" -> last four years 2018 - 2021
+
+"VAFO", "HOFU", "GETT", "APCO", "BOWA", "COLO", "SAHI", "ASIS") -> last four years 2016-2019
+
+</div>
