@@ -121,4 +121,48 @@ pStk_plot
 
 "VAFO", "HOFU", "GETT", "APCO", "BOWA", "COLO", "SAHI", "ASIS") -> last four years 2016-2019
 
+
+### Tree Metrics {.tabset}
+#### Basal Area
+<h3>By cycle (basal area in m.sq/ha)<h3>
+```{r BA loess by cycle, echo=FALSE}
+TreeBA_C
+```
+
+<h5>"FRSP", "RICH", "PETE", "GEWA", "THST" -> last four years 2018 - 2021
+
+"VAFO", "HOFU", "GETT", "APCO", "BOWA", "COLO", "SAHI", "ASIS") -> last four years 2016-2019<h5>
+
+<h3>By year (basal area in m.sq/ha)<h3>
+```{r BA loess by year, echo=FALSE}
+TreeBA_Y
+```
+
+#### Density
+<h3>By cycle (stems/ha)<h3>
+```{r tree dens loess by cycle, echo=FALSE}
+TreeDen_C
+```
+
+"FRSP", "RICH", "PETE", "GEWA", "THST" -> last four years 2018 - 2021
+
+"VAFO", "HOFU", "GETT", "APCO", "BOWA", "COLO", "SAHI", "ASIS") -> last four years 2016-2019
+
+<h3>By year (stems/ha)<h3>
+```{r tree dens loess by year, echo=FALSE}
+TreeDen_Y
+```
+
+#### Diameter Distibution
+```{r tree diameter dist, echo=FALSE}
+tree_dist_plot
+```
+
+Diameter distribution for live, native trees >10cm
+
+"FRSP", "RICH", "PETE", "GEWA", "THST" -> last four years 2018 - 2021
+
+"VAFO", "HOFU", "GETT", "APCO", "BOWA", "COLO", "SAHI", "ASIS") -> last four years 2016-2019
+
+
 </div>
